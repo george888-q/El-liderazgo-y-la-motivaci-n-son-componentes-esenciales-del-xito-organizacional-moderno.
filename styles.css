@@ -90,12 +90,22 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&auto=format&fit=crop') center/cover;
     color: white;
     padding: 5rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.hero-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
 }
 
 .hero::before {
@@ -170,6 +180,21 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
+.intro-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.intro-image:hover {
+    transform: scale(1.02);
+}
+
 .article-card {
     background: var(--card-bg);
     padding: 2rem;
@@ -189,6 +214,20 @@ body {
     font-size: 1.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+}
+
+.article-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.article-image:hover {
+    transform: scale(1.03);
 }
 
 /* Strategies Grid */
@@ -300,6 +339,20 @@ body {
     font-size: 1.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+}
+
+.case-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.case-image:hover {
+    transform: scale(1.03);
 }
 
 /* Resources Section */
@@ -458,6 +511,22 @@ body {
 
 .conclusion-section .section-title::after {
     background: white;
+}
+
+.conclusion-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto 2rem;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.conclusion-image:hover {
+    transform: scale(1.02);
 }
 
 /* Footer */
@@ -619,6 +688,18 @@ body {
 
     .resources-grid {
         grid-template-columns: 1fr;
+    }
+
+    .intro-image,
+    .article-image,
+    .case-image,
+    .conclusion-image {
+        height: 200px;
+    }
+
+    .hero {
+        background-size: cover;
+        background-position: center;
     }
 }
 
